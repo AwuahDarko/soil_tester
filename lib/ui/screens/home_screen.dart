@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:soil_tester/ui/screens/dashboard.dart';
+import 'package:soil_tester/ui/widgets/navigation_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -19,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      drawer: NavigationDrawer(),
       appBar: new AppBar(
         backgroundColor: Colors.green[400],
         title: new Text("Home"),
@@ -43,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen>
       ),
       body: TabBarView(
         children: [
-          new Text("This is call Tab View"),
+          new Dashboard(),
           new Text("This is chat Tab View"),
         ],
         controller: _tabController,
